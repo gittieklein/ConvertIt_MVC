@@ -1,0 +1,9 @@
+﻿#aboutText { width: 80%; margin: auto; text-align: center; }
+
+#conversionList { text-align:left; margin-left: 150px; margin-right: 150px; }
+.title { color: #80D73C; font-style: oblique; font-weight: bold; }
+h3 { text-align: center; }
+
+/*carousel*/
+#carousel {	height: 200px; margin: 50px 0 50px 0; }
+#carousel img {	visibility: hidden; cursor: pointer; height: 150px; }

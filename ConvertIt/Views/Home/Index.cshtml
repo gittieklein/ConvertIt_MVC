@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@Scripts.Render("~/bundle/home")
+@Styles.Render("~/bundle/homeStyles")
+
+<div class="container">
+    <div id="carousel">
+        <img src="~/images/Carousel/scale.png" id="item-1" />
+        <img src="~/images/Carousel/clock.png" id="item-2" />
+        <img src="~/images/Carousel/ruler.png" id="item-3" />
+        <img src="~/images/Carousel/thermometer.png" id="item-4" />
+        <img src="~/images/Carousel/spedometer.png" id="item-5" />
+        <img src="~/images/Carousel/cup.png" id="item-6" />
+        <img src="~/images/Carousel/currency.png" id="item-7" />
+    </div>
+</div>
+
+<div id="aboutText" class="panel panel-default">
+    <div class="panel panel-heading"><strong>About us</strong></div>
+    <div class="panel panel-body">
+        <p>
+            ConvertIt is an interactive website that allows you to convert between different units of measurments.
+            If you are traveling, doing homework or simply curious about different conversions, ConvertIt allows you to choose
+            between:
+        </p>
+        <div id="conversionList">
+            <span class="title">Weight:</span> Pounds, Kilograms, Ounces, Grams and Tons
+            <br><span class="title">Length:</span> Millimeters, Centimerters, Inches, Feet, Yards, Meters, Kilometers and Miles
+            <br><span class="title">Temperature:</span> Celcius, Farenheit and Kelvin
+            <br><span class="title">Time:</span> Seconds, Minutes, Hours and Days
+            <br><span class="title">Currency:</span> US Dollars, Israeli Shekels, Euros, British Pounds and Canadian Dollars
+        </div>
+        <br>
+        <p>
+            Just chose an option from the Conversions dropdown to get started!
+        </p>
+    </div>
+</div>
+
+

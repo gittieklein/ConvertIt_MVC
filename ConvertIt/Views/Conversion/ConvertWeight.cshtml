@@ -1,0 +1,28 @@
+﻿<div id="conversion-row">
+    <input class="num" type="text" name="input" autofocus"/>
+    <select class="units" name="from">
+        <option selected hidden value="">- Select -</option>
+        @foreach (String measurement in @Model)
+        {
+            <option value="@measurement">@measurement</option>
+        }
+    </select>
+    <input id="calcResult" class="num" disabled value="Result" />
+    <select class="units" name="to">
+        <option selected hidden value="">- Select -</option>
+        @foreach (String measurement in @Model)
+        {
+            <option value="@measurement">@measurement</option>
+        }
+    </select>
+</div>
+
+<div class="error"><label class="input-error hide">*Required Fields</label></div>
+
+<div class="submit">
+    <input class="btn btn-secondary btn-md calculate" type="submit" value="Calculate" onclick="calculateWeight()" />
+</div>
+
+
+
+

@@ -1,0 +1,53 @@
+﻿@{
+    var url = Request.RawUrl.ToLower();
+
+    //set title
+    if (url.Contains("currency"))
+    {
+        ViewBag.Title = "Currency";
+    }
+    else if (url.Contains("length"))
+    {
+        ViewBag.Title = "Length";
+    }
+    else if (url.Contains("temperature"))
+    {
+        ViewBag.Title = "Temperature";
+    }
+    else if (url.Contains("time"))
+    {
+        ViewBag.Title = "Time";
+    }
+    else if (url.Contains("weight"))
+    {
+        ViewBag.Title = "Weight";
+    }
+}   
+
+@Scripts.Render("~/bundle/conversions")
+@Styles.Render("~/bundle/conversionStyles")
+
+<h2 class="convert-header">@ViewBag.Title.ToUpper()</h2>
+
+<div id="form-style">
+    @if (ViewBag.Title == "Currency")
+    {
+        @Html.Partial("ConvertCurrency", (List<String>)Model.CurrencyMeasurements);
+    }
+    else if (ViewBag.Title == "Length")
+    {
+        @Html.Partial("ConvertLength", (List<String>)Model.LengthMeasurements);
+    }
+    else if (ViewBag.Title == "Temperature")
+    {
+        @Html.Partial("ConvertTemperature", (List<String>)Model.TemperatureMeasurements);
+    }
+    else if (ViewBag.Title == "Time")
+    {
+        @Html.Partial("ConvertTime", (List<String>)Model.TimeMeasurements);
+    }
+    else if (ViewBag.Title == "Weight")
+    {
+        @Html.Partial("ConvertWeight", (List<String>)Model.WeightMeasurements);
+    } 
+</div>

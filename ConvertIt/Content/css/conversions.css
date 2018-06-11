@@ -1,0 +1,15 @@
+﻿.convert-header { text-align: center; font-weight: bold; font-family: arial; }
+#form-style { border-style: solid; border-width: 3px; border-radius: 5px; width: 950px; margin: auto; margin-top: 50px; margin-bottom: 100px; }
+#conversion-row { margin: 45px auto 10px; justify-content: space-between; text-align: center; }
+#conversion-row .num, #conversion-row .units { height: 35px; width: 150px; font-family: "Arial"; border-radius: 5px; display: inline-block; margin-right: 5px; }
+.num  { background-color: white; border: 1px solid #696969; padding-left: 13px; }
+.units { background-color: #696969; color: white; padding-left: 10px; padding-top: 2px; }
+.units option { background-color: #ffffff; color: #696969; padding: 0; }
+
+.error { height:30px; color:red; text-align: center; }
+.error label { font-weight: 300; font-size: 12px; }
+
+.submit { text-align: center; }
+.calculate { font-family: "Arial"; margin-top: 20px; margin-bottom: 50px; border: 1px solid #696969; }
+
+.hide { display: none }
