@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ConvertIt.Models;
+using ConvertIt.Models.Currency;
+using ConvertIt.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +11,21 @@ namespace ConvertIt.Controllers
 {
     public class FormulasController : Controller
     {
+        ExchangeRateAPIService ExchangeRateAPIService = new ExchangeRateAPIService();
+
         public ActionResult Index()
         {
-            return View();
+            FormulasModel rates = new FormulasModel();
+            rates.Rates = GetRates();
+            return View(rates);
+        }
+
+        public List<AllExchangeRates> GetRates()
+        {
+            return ExchangeRateAPIService.GetAllExchangeRates(new List<String> { "BRL", "GBP", "CAD", "CNY", "EUR", "INR", "ILS", "JPY", "MXN", "CHF", "USD" });
         }
     }
 }
+
+
+                                            

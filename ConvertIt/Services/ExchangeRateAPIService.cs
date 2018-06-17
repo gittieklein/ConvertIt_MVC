@@ -4,21 +4,35 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
 using Newtonsoft.Json;
+using ConvertIt.Models.Currency;
+using System.Collections.Generic;
 
 namespace ConvertIt.Services
 {
     public class ExchangeRateAPIService
-    {      
-       // static HttpClient client = new HttpClient();
+    {
+        public string APIKey = "bfe4ced123054d17e4048402";
 
-        public double GetCurrencyExchange(int amount, string from, string to)//public async Task<double> GetCurrencyExchange(int amount, string from, string to)
+        public double GetCurrencyExchange(int amount, string from, string to)
         {
-            string url = $"https://v3.exchangerate-api.com/pair/bfe4ced123054d17e4048402/{from}/{to}";
+            string url = $"https://v3.exchangerate-api.com/pair/{APIKey}/{from}/{to}";
 
-            var data = JsonConvert.DeserializeObject<ExchangeRateData>(GetResponse("https://v3.exchangerate-api.com/pair/bfe4ced123054d17e4048402/" + from + "/" + to));
+            ExchangeRateData data = JsonConvert.DeserializeObject<ExchangeRateData>(GetResponse(url));
 
             double num = Double.Parse(data.rate) * amount;
             return Math.Round(num, 2);
+        }
+
+        public List<AllExchangeRates> GetAllExchangeRates(List<String> from)
+        {
+            List<AllExchangeRates> data = new List<AllExchangeRates>();
+            foreach(string currency in from)
+            {
+                string url = $"https://v3.exchangerate-api.com/bulk/{APIKey}/{currency}";
+                data.Add(JsonConvert.DeserializeObject<AllExchangeRates>(GetResponse(url)));
+            }
+
+            return data;
         }
 
         private string GetResponse(string url)
@@ -29,8 +43,6 @@ namespace ConvertIt.Services
                 HttpMethod httpVerb = HttpMethod.Get;
 
                var request = new HttpRequestMessage(httpVerb, url);
-
-                //ServicePointManager.ServerCertificateValidationCallback = ((sender, cert, chain, errors) => true);
 
                 var task = httpClient.SendAsync(request).ContinueWith((taskWithMsg) =>
                 {

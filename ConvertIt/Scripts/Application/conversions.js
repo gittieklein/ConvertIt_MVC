@@ -35,10 +35,13 @@ var calculateLength = function ()
         return;
     }
 
+    $('.loader-holder').append('<div class="loader"></div>');
+
     $.get('CalculateLength?input=' + input + '&to=' + to + '&from=' + from,
         function (result) {
             $('.input-error').addClass('hide');
             $('#calcResult').val(result);
+            $('.loader').remove();
         });
 }
 
@@ -52,10 +55,13 @@ var calculateTemp = function () {
         return;
     }
 
+    $('.loader-holder').append('<div class="loader"></div>');
+
     $.get('CalculateTemperature?input=' + input + '&to=' + to + '&from=' + from,
         function (result) {
             $('.input-error').addClass('hide');
             $('#calcResult').val(result);
+            $('.loader').remove();
         });
 }
 
@@ -69,10 +75,13 @@ var calculateTime = function () {
         return;
     }
 
+    $('.loader-holder').append('<div class="loader"></div>');
+
     $.get('CalculateTime?input=' + input + '&to=' + to + '&from=' + from,
         function (result) {
             $('.input-error').addClass('hide');
             $('#calcResult').val(result);
+            $('.loader').remove();
         });
 }
 
@@ -86,10 +95,13 @@ var calculateWeight = function () {
         return;
     }
 
+    $('.loader-holder').append('<div class="loader"></div>');
+
     $.get('CalculateWeight?input=' + input + '&to=' + to + '&from=' + from,
         function (result) {
             $('.input-error').addClass('hide');
             $('#calcResult').val(result);
+            $('.loader').remove();
         });
 }
 

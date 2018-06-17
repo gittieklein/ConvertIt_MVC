@@ -181,7 +181,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ConversionModel.cs" />
-    <Compile Include="Models\ExchangeRateData.cs" />
+    <Compile Include="Models\Currency\AllExchangeRates.cs" />
+    <Compile Include="Models\Currency\ExchangeRateData.cs" />
+    <Compile Include="Models\FormulasModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConversionService.cs" />
     <Compile Include="Services\ExchangeRateAPIService.cs" />

@@ -6,47 +6,30 @@
 @Styles.Render("~/bundle/formulasStyles")
 
 <div id="accordion">
-    <h3>WEIGHT</h3>
+    <h3>CURRENCY</h3>
     <div>
-        <div style="width:50%;float:left;">
-            <p>1 Kilogram =</p>
-            <ul>
-                <li>2.2 Pounds</li>
-                <li>1000 Grams</li>
-                <li> 35.3 Ounces</li>
-                <li> 0.00110231 Tons </li>
-            </ul></br>
-            <p>1 Pound =</p>
-            <ul>
-                <li>0.453592 Kilogram</li>
-                <li>453.6 Grams</li>
-                <li>16 Ounces</li>
-                <li>0.0005 Tons</li>
-            </ul></br>
-            <p>1 Gram =</p>
-            <ul>
-                <li>0.001 Kilogram</li>
-                <li>0.00220462 Pounds</li>
-                <li>0.035274 Ounces</li>
-                <li>.000001102 Tons</li>
-            </ul></br>
-        </div>
-        <div style="width:50%;float:left;">
-            <p>1 Ounce =</p>
-            <ul>
-                <li>0.0283495 Kilogram</li>
-                <li>0.0625 Pounds</li>
-                <li>28.3 Grams</li>
-                <li>0.00003125 Tons</li>
-            </ul></br>
-            <p>1 Ton =</p>
-            <ul>
-                <li>907.2 Kilograms</li>
-                <li>2000 Pounds</li>
-                <li>907185 Grams</li>
-                <li>32000 Ounces</li>
-            </ul></br>
-        </div>
+        @{
+            foreach (var currency in @Model.Rates)
+            {
+                <div style="width:50%;float:left;">
+                    <p>1 @currency.from =</p>
+                    <ul>
+                        <li>@Math.Round(Double.Parse(currency.rates["BRL"]), 2) Brazilian Reals (R$)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["GBP"]), 2) British Pounds (&pound;)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["CAD"]), 2) Candian Dollars ($)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["CNY"]), 2) Chinese Renminbis (&yen)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["EUR"]), 2) Euros (&euro;)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["INR"]), 2) Indian Rupees (&#8377;)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["ILS"]), 2) Israeli New Shekels (&#8362;)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["JPY"]), 2) Japanese Yens (&yen)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["MXN"]), 2) Mexican Pesos (&#8369;)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["CHF"]), 2) Swiss Francs (CHF)</li>
+                        <li>@Math.Round(Double.Parse(currency.rates["USD"]), 2) US Dollars ($)</li>
+                    </ul>
+                    <br />
+                </div>
+            }
+        }
     </div>
     <h3>LENGTH</h3>
     <div>
@@ -71,7 +54,8 @@
                 <li>0.0109 Yards</li>
                 <li>0.0000062 Miles</li>
             </ul></br>
-            <p>1 Inch =
+            <p>
+                1 Inch =
             </p>
             <ul>
                 <li>25.4 Millimeters</li>
@@ -135,7 +119,7 @@
                 <li>1760.0005632 Yards</li>
             </ul></br>
         </div>
-    </div>
+    </div>  
     <h3>TEMPERATURE</h3>
     <div>
         <div style="width:50%;float:left;">
@@ -198,103 +182,47 @@
             </ul></br>
         </div>
     </div>
-    <h3>CURRENCY</h3>
+    <h3>WEIGHT</h3>
     <div>
         <div style="width:50%;float:left;">
-            <p>
-                1 US Dollar ($) =
-            </p>
+            <p>1 Kilogram =</p>
             <ul>
-                <li>
-                    0.95 Euros (&euro;)
-                </li>
-                <li>
-                    3.65 Israeli New Shekels (&#8362;)
-                </li>
-                <li>
-                    0.81 British Pounds (&pound;)
-                </li>
-                <li>
-                    1.33 Canadian Dollars ($)
-                </li>
+                <li>2.2 Pounds</li>
+                <li>1000 Grams</li>
+                <li> 35.3 Ounces</li>
+                <li> 0.00110231 Tons </li>
             </ul></br>
-            <p>
-                1 Euro (&euro;) =
-            </p>
+            <p>1 Pound =</p>
             <ul>
-                <li>
-                    1.05 US Dollars ($)
-                </li>
-                <li>
-                    3.86 Israeli New Shekels (&#8362;)
-                </li>
-                <li>
-                    0.86 British Pounds (&pound;)
-                </li>
-                <li>
-                    1.41 Canadian Dollars ($)
-                </li>
+                <li>0.453592 Kilogram</li>
+                <li>453.6 Grams</li>
+                <li>16 Ounces</li>
+                <li>0.0005 Tons</li>
             </ul></br>
-            <p>
-                1 Israeli New Shekel (&#8362;) =
-            </p>
+            <p>1 Gram =</p>
             <ul>
-                <li>
-                    0.27 US Dollars ($)
-                </li>
-                <li>
-                    0.26 Euros (&euro;)
-                </li>
-                <li>
-                    0.22 British Pounds (&pound;)
-                </li>
-                <li>
-                    0.36 Canadian Dollars ($)
-                </li>
+                <li>0.001 Kilogram</li>
+                <li>0.00220462 Pounds</li>
+                <li>0.035274 Ounces</li>
+                <li>.000001102 Tons</li>
             </ul></br>
         </div>
         <div style="width:50%;float:left;">
-            <p>
-                1 British Pound (&pound;) =
-            </p>
+            <p>1 Ounce =</p>
             <ul>
-                <li>
-                    1.23 US Dollars ($)
-                </li>
-                <li>
-                    1.16 Euros (&euro;)
-                </li>
-                <li>
-                    4.50 Israeli New Shekels (&#8362;)
-                </li>
-                <li>
-                    1.64 Canadian Dollars ($)
-                </li>
+                <li>0.0283495 Kilogram</li>
+                <li>0.0625 Pounds</li>
+                <li>28.3 Grams</li>
+                <li>0.00003125 Tons</li>
             </ul></br>
-            <p>
-                1 Canadian Dollar ($) =
-            </p>
+            <p>1 Ton =</p>
             <ul>
-                <li>
-                    0.75 US Dollars ($)
-                </li>
-                <li>
-                    0.71 Euros (&euro;)
-                </li>
-                <li>
-                    2.75 Israeli New Shekels (&#8362;)
-                </li>
-                <li>
-                    0.61 British Pounds (&pound;)
-                </li>
+                <li>907.2 Kilograms</li>
+                <li>2000 Pounds</li>
+                <li>907185 Grams</li>
+                <li>32000 Ounces</li>
             </ul></br>
-
         </div>
-        <div id="currency_notice">
-            <p style="text-align: right; font-size: 10px;">
-                currency conversion rates last updated 03/01/2017
-            </p>
-        </div>
-    </div>
+    </div>  
 </div>
 
