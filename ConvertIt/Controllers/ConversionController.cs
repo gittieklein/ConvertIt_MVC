@@ -21,9 +21,8 @@ namespace ConvertIt.Controllers
 
         public JsonResult CalculateCurrency(int input, string from, string to)
         {
-            //double currency = ConversionService.GetCurrency(input, from, to);
-            //return Json(Math.Round(currency, 14), JsonRequestBehavior.AllowGet);
-            return Json(1, JsonRequestBehavior.AllowGet);
+            double currency = ConversionService.GetCurrency(input, from, to);
+            return Json(currency, JsonRequestBehavior.AllowGet);
 
         }
         public JsonResult CalculateLength(int input, string from, string to)
@@ -48,8 +47,5 @@ namespace ConvertIt.Controllers
             double weight = ConversionService.GetWeight(input, from, to);
             return Json(Math.Round(weight, 14), JsonRequestBehavior.AllowGet);
         }
-
-        
-
     }
 }

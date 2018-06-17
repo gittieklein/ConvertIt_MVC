@@ -7,6 +7,14 @@ namespace ConvertIt.Services
 {
     public class ConversionService
     {
+        ExchangeRateAPIService ExchangeRateAPIService = new ExchangeRateAPIService();
+        #region Currency
+        public double GetCurrency(int input, string from, string to)
+        {
+            return ExchangeRateAPIService.GetCurrencyExchange(input, from, to);
+        }
+        #endregion
+
         #region Length   
         public double GetLength(int input, string from, string to)
         {

@@ -32,7 +32,7 @@
 <div id="form-style">
     @if (ViewBag.Title == "Currency")
     {
-        @Html.Partial("ConvertCurrency", (List<String>)Model.CurrencyMeasurements);
+        @Html.Partial("ConvertCurrency", (List<List<String>>)Model.CurrencyMeasurements);
     }
     else if (ViewBag.Title == "Length")
     {

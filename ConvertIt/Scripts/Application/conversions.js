@@ -12,11 +12,14 @@ var calculateCurrency = function () {
         $('.input-error').removeClass('hide');
         return;
     }
+    
+    $('.loader-holder').append('<div class="loader"></div>');
 
     $.get('CalculateCurrency?input=' + input + '&to=' + to + '&from=' + from,
         function (result) {
             $('.input-error').addClass('hide');
             $('#calcResult').val(result);
+            $('.loader').remove();
         });
 }
 

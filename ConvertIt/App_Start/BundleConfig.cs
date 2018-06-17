@@ -11,7 +11,8 @@ namespace ConvertIt
 
             bundles.Add(new StyleBundle("~/bundle/master").Include(
                 "~/Content/bootstrap.min.css",
-                "~/Content/css/layout.css"                
+                "~/Content/css/layout.css",
+                "~/Content/css/loader.css"
             ));
 
             bundles.Add(new ScriptBundle("~/bundle/scripts").Include(
