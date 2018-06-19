@@ -158,6 +158,7 @@
     <Content Include="Images\Carousel\scale.png" />
     <Content Include="Images\Carousel\spedometer.png" />
     <Content Include="Images\Carousel\thermometer.png" />
+    <Content Include="Images\logo.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\Application\conversions.js" />
@@ -174,6 +175,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\ConversionController.cs" />
     <Compile Include="Controllers\FormulasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,6 +188,7 @@
     <Compile Include="Models\FormulasModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConversionService.cs" />
+    <Compile Include="Services\EmailService.cs" />
     <Compile Include="Services\ExchangeRateAPIService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ContactUs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
