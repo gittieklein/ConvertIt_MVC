@@ -1,25 +1,28 @@
-﻿<div class="navbar navbar-inverse">
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-logo">
         <a href="/"><img src="~/Images/logo.png" /></a>
     </div>
-    <div class="navbar-options">
-        <ul class="nav navbar-nav">
-            <li class="dropdown">
-                <a class="dropdown-toggle menu" data-toggle="dropdown" href="#">Conversions<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="/Conversion/currency">Currency</a></li>
-                    <li><a href="/Conversion/length">Length</a></li>
-                    <li><a href="/Conversion/temperature">Temperature</a></li>
-                    <li><a href="/Conversion/time">Time</a></li>
-                    <li><a href="/Conversion/weight">Weight</a></li>
-                </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conversions</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/Conversion/currency">Currency</a>
+                    <a class="dropdown-item" href="/Conversion/length">Length</a>
+                    <a class="dropdown-item" href="/Conversion/temperature">Temperature</a>
+                    <a class="dropdown-item" href="/Conversion/time">Time</a>
+                    <a class="dropdown-item" href="/Conversion/weight">Weight</a>
+                </div>
             </li>
-            <li><a class="menu" href="/formulas">Formulas</a></li>
-            <li>
-                <a class="menu" href="#" data-toggle="modal" data-target="#modalContact">
-                    Contact Us <span class="glyphicon glyphicon-envelope"></span>
+            <li class="nav-item"><a class="nav-link" href="/formulas">Formulas</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#contactUsModal">
+                    Contact Us @*<span class="glyphicon glyphicon-envelope"></span>*@
                 </a>
             </li>
         </ul>
     </div>
-</div>
+</nav>

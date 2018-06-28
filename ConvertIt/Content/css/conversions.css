@@ -4,7 +4,7 @@
 #conversion-row .num, #conversion-row .units { height: 35px; width: 150px; font-family: "Arial"; border-radius: 5px; display: inline-block; margin-right: 5px; }
 .num  { background-color: white; border: 1px solid #696969; padding-left: 13px; }
 .units { background-color: #696969; color: white; padding-left: 10px; padding-top: 2px; }
-.units option { background-color: #ffffff; color: #696969; padding: 0; }
+.units option { background-color: #ffffff; color: #696969; padding: 0; font-size: 14px; }
 
 .error { height:30px; color:red; text-align: center; }
 .error label { font-weight: 300; font-size: 12px; }

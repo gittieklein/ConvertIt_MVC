@@ -10,14 +10,15 @@ namespace ConvertIt
         {
 
             bundles.Add(new StyleBundle("~/bundle/master").Include(
-                "~/Content/bootstrap.min.css",
+                "~/Content/bootstrap.css",
                 "~/Content/css/layout.css",
                 "~/Content/css/loader.css"
             ));
 
             bundles.Add(new ScriptBundle("~/bundle/scripts").Include(
                 "~/Scripts/jquery-1.10.2.js",
-                "~/Scripts/bootstrap.js"
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/Application/contactUs.js"
             ));
 
             bundles.Add(new ScriptBundle("~/bundle/home").Include(

@@ -17,9 +17,10 @@ namespace ConvertIt.Controllers
             return View();
         }
 
-        public void SendEmail()
+        //[HttpPost]
+        public void SendEmail(string name, string email, string subject, string message = "")
         {
-            EmailService.SendEmail("gittiekay@gmail.com", "testemail", "dear blank<br>This is a test email lol<br>hope it works");
+            EmailService.SendEmail(name, email, subject, message);
         }
     }
 }

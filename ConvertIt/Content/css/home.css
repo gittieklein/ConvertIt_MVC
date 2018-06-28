@@ -3,6 +3,7 @@
 #conversionList { text-align:left; margin-left: 150px; margin-right: 150px; }
 .title { color: #80D73C; font-style: oblique; font-weight: bold; }
 h3 { text-align: center; }
+.card .card-body p, .card .card-body span, .card #conversionList { font-size: 14px; }
 
 /*carousel*/
 #carousel {	height: 200px; margin: 50px 0 50px 0; }

@@ -143,7 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\css\conversions.css" />
     <Content Include="Content\css\formulas.css" />
     <Content Include="Content\css\home.css" />
@@ -160,6 +160,7 @@
     <Content Include="Images\Carousel\thermometer.png" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\logo.png" />
+    <Content Include="Scripts\Application\contactUs.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\Application\conversions.js" />
     <Content Include="Scripts\Application\formulas.js" />
@@ -185,6 +186,7 @@
     <Compile Include="Models\ConversionModel.cs" />
     <Compile Include="Models\Currency\AllExchangeRates.cs" />
     <Compile Include="Models\Currency\ExchangeRateData.cs" />
+    <Compile Include="Models\EmailInput.cs" />
     <Compile Include="Models\FormulasModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConversionService.cs" />
@@ -218,7 +220,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ContactUs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -10,14 +10,15 @@ namespace ConvertIt.Services
 {
     public class EmailService
     {
-        readonly string emailFrom = "convertitconversions@gmail.com";
+        readonly string email = "convertitconversions@gmail.com";
         readonly string fromPassword = "neumannklein";
 
-        public void SendEmail(string emailTo, string subject, string body)
+        public void SendEmail(string name, string userEmail, string subject, string body)
         {                 
-            var fromAddress = new MailAddress(emailFrom, "ConvertIt");
-            var toAddress = new MailAddress(emailTo);
+            var fromAddress = new MailAddress(email, name + " " + userEmail);
+            var toAddress = new MailAddress(email);
 
+            body = body.Replace("---", "<br>");
             AlternateView alternateView = CreateEmailBody(body);         
 
             var smtp = new SmtpClient
@@ -29,6 +30,7 @@ namespace ConvertIt.Services
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
             };
+            
             using (var message = new MailMessage(fromAddress, toAddress)
             {
                 Subject = subject,

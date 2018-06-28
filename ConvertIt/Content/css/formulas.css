@@ -3,6 +3,8 @@
 	margin: auto;
 }
 
+#accordion p, #accordion ul li { font-size: 14px;}
+
 /* Interaction Cues
 ----------------------------------*/
 .ui-state-disabled {
