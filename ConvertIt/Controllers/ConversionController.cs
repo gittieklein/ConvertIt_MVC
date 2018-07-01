@@ -28,24 +28,24 @@ namespace ConvertIt.Controllers
         public JsonResult CalculateLength(int input, string from, string to)
         {
             double length = ConversionService.GetLength(input, from, to);
-            return Json(Math.Round(length, 14), JsonRequestBehavior.AllowGet);
+            return Json(Math.Round(length, 12), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult CalculateTemperature(int input, string from, string to)
         {
             double temp = ConversionService.GetTemperature(input, from, to);
-            return Json(Math.Round(temp, 14), JsonRequestBehavior.AllowGet);
+            return Json(Math.Round(temp, 12), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult CalculateTime(int input, string from, string to)
         {
             double time = ConversionService.GetTime(input, from, to);
-            return Json(Math.Round(time, 14), JsonRequestBehavior.AllowGet);
+            return Json(Math.Round(time, 12), JsonRequestBehavior.AllowGet);
         }
         public JsonResult CalculateWeight(int input, string from, string to)
         {
             double weight = ConversionService.GetWeight(input, from, to);
-            return Json(Math.Round(weight, 14), JsonRequestBehavior.AllowGet);
+            return Json(Math.Round(weight, 12), JsonRequestBehavior.AllowGet);
         }
     }
 }
