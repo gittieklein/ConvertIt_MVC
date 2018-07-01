@@ -34,54 +34,26 @@
         }
     }
     else {
-        //$("#name").innerHTML = "";
-        //$("#email").innerHTML = "";
-        //$("#subject").innerHTML = "";
-        //$("#message").innerHTML = "";
+        $.get('ContactUs/SendEmail?name=' + formName + '&email=' + formEmail + '&subject=' + formSubject + '&message=' + formMessage).then(
+            function () {
+                $(".modal-body input").val("");
+                $(".modal-body textarea").val("");
 
-        //$(".modal-body input").val("");
-
-        $.get('ContactUs/SendEmail?name=' + formName + '&email=' + formEmail + '&subject=' + formSubject + '&message=' + formMessage);
-       
-       
-        //$('#contactUsModal').find('#modal-title').html('<h4>Your message was sent!</h4>');
-        //$('#contactUsModal').find('#modal-body').html('<p>Thank you for contacting convertIt.com You will hear back from us shortly.</p>' +
-		//'<img src="images/convertItNoBkgd.PNG" class="center-block img-rounded" alt="Cinque Terre" width="304" height="auto" style="background-color: black;"><br>' +
-		//'<button type="button" class="btn btn-default center-block"  data-dismiss="modal" id="close-confirm" onclick="resetContactForm()">Close</button>');
-
+                $('#contactUsModal').find('.modal-title').html('<h4>Your message was sent!</h4>');
+                $('#contactUsModal').find('.modal-body').html('<p>Thank you for contacting convertIt.com You will hear back from us shortly.</p>' +
+                '<img src="images/logo.png" width="304" height="auto" />');
+                $('#contactUsModal').find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetContactForm()">Close</button>');
+            });
     }
-
-
-
-
 };
 
-//var resetContactForm = function () {
-
-//    $("#modalContact .close").click();
-
-//    $('#modalContact').find('#modal-title').html('<h4>Contact Us</h4>');
-
-//    $('#modalContact').find('#modal-body').html('<div class="form-group">' +
-//													'<div class="col-md-8"> ' +
-//														'<input type="text" id="varName" class="form-control" name="name" placeholder= "Name" />' +
-//													'</div>' +
-//													'<div class="col-md-4"><span id="nameErr" class="contactError" style="color: red" > <label style=" width: 100px"></label> </span></div></div>' +
-//												'<div class="form-group" style="padding-top: 20px;">' +
-//													'<div class="col-md-8">' +
-//														'<input type="email" id="varEmail" class="form-control" name="email" placeholder="Email" />' +
-//													'</div>' +
-//												'<div class="col-md-4">' +
-//													'<span id="emailErr" class="contactError" style="color: red"> <label style="width: 100px;"></label> </span></div>' +
-//												'</div>' +
-//												'<div class="form-group" style="padding-top: 20px;">' +
-//												'<div class="col-md-8">' +
-//													'<input type="text" id="varSubject" class="form-control" name="subject" placeholder="Subject" />' +
-//												'</div>' +
-//												'<div class="col-md-4"><span id="subjectErr" class="contactError" style="color: red"> <label style="width: 100px"></label> </span></div></div>' +
-//												'<div class="form-group" style="padding-top: 20px;">' +
-//												'<div class="col-md-12"><textarea type="text" id="varMessage" class="form-control" name="detail" placeholder="Message" ></textarea></div></div>' +
-//												'<div class="form-group" style="padding-top: 75px; margin-bottom: -5px"><button type="button" id= "submit_button" class="btn btn-success center-block" onclick="sendEmail()">Submit</button></div>');
-
-
-//};
+function resetContactForm() {
+    $('#contactUsModal').modal('hide');
+    $('#contactUsModal').find('.modal-title').html('<h4>Contact Us</h4>');
+    $('#contactUsModal').find('.modal-body').html('<input type="text" class="form-control" id="name" placeholder="Name" autofocus>' +
+                                                    '<input type="email" class="form-control" id="email" placeholder="Email">' +
+                                                    '<input type="text" class="form-control" id="subject" placeholder="Subject">' +
+                                                    '<textarea type="text" class="form-control" id="message" placeholder="Message" rows="8"></textarea>');
+    $('#contactUsModal').find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>' +
+                                                    '<button type="button" class="btn btn-success" onclick="sendEmail()">Submit</button>');
+}
